@@ -51,7 +51,7 @@ if st.button("Extract Info") and drive_link:
         pdf_path = download_pdf_from_drive(drive_link)
         if pdf_path:
             try:
-                image_paths = pdf_to_images(pdf_path, image_dir="temp_images")
+                image_paths = pdf_to_images(pdf_path, image_dir="temp_images_folder")
                 cleaned_images = remove_horizontal_lines(image_paths)
                 texts = extract_text_from_images(cleaned_images)
 
@@ -73,5 +73,5 @@ if st.button("Extract Info") and drive_link:
                     st.write(f"**Company Name:** {company_name or '❌ Not found'}")
 
             finally:
-                cleanup_dir("temp_images")
+                cleanup_dir("temp_images_folder")
                 os.remove(pdf_path)
