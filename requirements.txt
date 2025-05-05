@@ -1,0 +1,7 @@
+streamlit
+opencv-python
+pytesseract
+PyMuPDF
+pandas
+python-dateutil
+requests
